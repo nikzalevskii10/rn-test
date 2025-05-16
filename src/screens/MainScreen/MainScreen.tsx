@@ -1,15 +1,8 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {FlatList, Pressable, Text, View} from 'react-native';
+import {FlatList, Image, Pressable, Text, View} from 'react-native';
 import {RootStackParamList} from '../../navigation/AppNavigator';
 import {styles} from './styles';
-
-const DATA = [
-  {id: '1', title: '🍎 Apple'},
-  {id: '2', title: '🍌 Banana'},
-  {id: '3', title: '🍇 Grape'},
-  {id: '4', title: '🍑 Peach'},
-  {id: '5', title: '🥝 Kiwi'},
-];
+import {products} from '../../data/products';
 
 function ListHeader() {
   return <Text>Заголовок</Text>;
@@ -32,15 +25,28 @@ export default function MainScreen({navigation}: Props) {
         ListHeaderComponent={ListHeader}
         ItemSeparatorComponent={ItemSeparator}
         ListEmptyComponent={ListEmpty}
-        data={DATA}
+        data={products}
         keyExtractor={item => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.listContent}
         renderItem={({item}) => (
           <Pressable
+            style={styles.pressable}
             onPress={() => {
               navigation.navigate('Details', {id: item.id, title: item.title});
             }}>
             <View style={styles.item}>
-              <Text>{item.title}</Text>
+              <Image source={{uri: item.image}} style={styles.image} />
+              <View style={styles.itemContent}>
+                <Text style={styles.title} numberOfLines={1}>
+                  {item.title}
+                </Text>
+                <Text style={styles.category}>{item.category}</Text>
+                <View style={styles.priceContainer}>
+                  <Text style={styles.price}>${item.price}</Text>
+                  <Text style={styles.stock}>In stock: {item.stock}</Text>
+                </View>
+              </View>
             </View>
           </Pressable>
         )}

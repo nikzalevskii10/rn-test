@@ -1,6 +1,6 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
-import {RootStackParamList} from '../navigation/AppNavigator';
+import {RootStackParamList} from '../../navigation/AppNavigator';
 
 const DATA = [
   {id: '1', title: '🍎 Apple'},

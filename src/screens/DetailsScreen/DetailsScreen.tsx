@@ -1,8 +1,8 @@
 import React from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {RootStackParamList} from '../navigation/AppNavigator';
+import {RootStackParamList} from '../../navigation/AppNavigator';
 import {Button, Text, View} from 'react-native';
-import {commonStyles} from '../styles/common';
+import {commonStyles} from '../../styles/common';
 type Props = NativeStackScreenProps<RootStackParamList, 'Details'>;
 
 export default function DetailsScreen({navigation, route}: Props) {

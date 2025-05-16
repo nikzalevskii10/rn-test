@@ -1,6 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Pressable, Text, View} from 'react-native';
 import {RootStackParamList} from '../../navigation/AppNavigator';
+import {styles} from './styles';
 
 const DATA = [
   {id: '1', title: '🍎 Apple'},
@@ -22,9 +23,9 @@ function ListEmpty() {
   return <Text>Список пуст</Text>;
 }
 
-type Props = NativeStackScreenProps<RootStackParamList, 'List'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'Main'>;
 
-export default function ListScreen({navigation}: Props) {
+export default function MainScreen({navigation}: Props) {
   return (
     <View style={styles.screen}>
       <FlatList
@@ -47,22 +48,3 @@ export default function ListScreen({navigation}: Props) {
     </View>
   );
 }
-
-// Временные стили для экрана и элементов списка
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: '#fff',
-  },
-  item: {
-    padding: 16,
-    marginVertical: 8,
-    backgroundColor: '#f3f3f3',
-    borderRadius: 8,
-  },
-  separator: {
-    height: 1,
-    backgroundColor: '#e0e0e0',
-  },
-});

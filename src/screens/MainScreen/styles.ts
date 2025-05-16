@@ -1,87 +1,81 @@
-import {StyleSheet} from 'react-native';
+import styled from 'styled-components/native';
 
-export const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  header: {
-    padding: 16,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-  },
-  listContent: {
-    padding: 16,
-  },
-  pressable: {
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-  item: {
-    flexDirection: 'row',
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    overflow: 'hidden',
-    elevation: 2,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 1.41,
-  },
-  image: {
-    width: 100,
-    height: 100,
-    backgroundColor: '#f0f0f0',
-  },
-  itemContent: {
-    flex: 1,
-    padding: 12,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 4,
-  },
-  category: {
-    fontSize: 14,
-    color: '#666',
-    marginBottom: 8,
-  },
-  priceContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  price: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#2196F3',
-  },
-  stock: {
-    fontSize: 12,
-    color: '#666',
-  },
-  separator: {
-    height: 12,
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  emptyText: {
-    fontSize: 16,
-    color: '#666',
-  },
-});
+export const Screen = styled.View`
+  flex: 1;
+  background-color: ${props => props.theme.colors.background};
+`;
+
+export const ListContent = styled.View`
+  padding: ${props => props.theme.spacing.m}px;
+`;
+
+export const ItemContainer = styled.Pressable`
+  border-radius: ${props => props.theme.borderRadius.m}px;
+  overflow: hidden;
+  margin-bottom: ${props => props.theme.spacing.s}px;
+`;
+
+export const Item = styled.View`
+  flex-direction: row;
+  background-color: ${props => props.theme.colors.card};
+  border-radius: ${props => props.theme.borderRadius.m}px;
+  overflow: hidden;
+  ${props => props.theme.shadows.m}
+`;
+
+export const ItemImage = styled.Image`
+  width: 100px;
+  height: 100px;
+  background-color: ${props => props.theme.colors.surface};
+`;
+
+export const ItemContent = styled.View`
+  flex: 1;
+  padding: ${props => props.theme.spacing.m}px;
+`;
+
+export const ItemTitle = styled.Text`
+  font-size: ${props => props.theme.typography.fontSize.m}px;
+  font-weight: 600;
+  color: ${props => props.theme.colors.text};
+  margin-bottom: ${props => props.theme.spacing.xs}px;
+`;
+
+export const ItemCategory = styled.Text`
+  font-size: ${props => props.theme.typography.fontSize.s}px;
+  color: ${props => props.theme.colors.textSecondary};
+  margin-bottom: ${props => props.theme.spacing.s}px;
+`;
+
+export const PriceContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Price = styled.Text`
+  font-size: ${props => props.theme.typography.fontSize.m}px;
+  font-weight: bold;
+  color: ${props => props.theme.colors.primary};
+`;
+
+export const Stock = styled.Text`
+  font-size: ${props => props.theme.typography.fontSize.xs}px;
+  color: ${props => props.theme.colors.textSecondary};
+`;
+
+export const Separator = styled.View`
+  height: ${props => props.theme.spacing.s}px;
+`;
+
+export const EmptyContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: ${props => props.theme.spacing.l}px;
+`;
+
+export const EmptyText = styled.Text`
+  font-size: ${props => props.theme.typography.fontSize.m}px;
+  color: ${props => props.theme.colors.textSecondary};
+`;

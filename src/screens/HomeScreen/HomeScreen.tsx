@@ -21,9 +21,6 @@ export default function HomeScreen({navigation}: Props) {
       <Title>Home Screen</Title>
       <Subtitle>Welcome to our app!</Subtitle>
       <ButtonContainer>
-        <StyledButton onPress={() => navigation.navigate('Details', {})}>
-          <ButtonText>Go To Details</ButtonText>
-        </StyledButton>
         <StyledButton onPress={() => navigation.navigate('Main')}>
           <ButtonText>Go To Main</ButtonText>
         </StyledButton>

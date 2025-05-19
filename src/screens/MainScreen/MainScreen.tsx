@@ -38,6 +38,7 @@ function ListEmpty() {
 type Props = NativeStackScreenProps<RootStackParamList, 'Main'>;
 
 export default function MainScreen({navigation}: Props) {
+  console.log('MainScreen');
   return (
     <Screen>
       <ListContent>

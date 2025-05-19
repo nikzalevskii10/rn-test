@@ -19,8 +19,12 @@ export const Item = styled.View`
   flex-direction: row;
   background-color: ${props => props.theme.colors.card};
   border-radius: ${props => props.theme.borderRadius.m}px;
-  overflow: hidden;
-  ${props => props.theme.shadows.m}
+  shadow-color: ${props => props.theme.shadows.m.shadowColor};
+  shadow-offset: ${props => props.theme.shadows.m.shadowOffset.width}px
+    ${props => props.theme.shadows.m.shadowOffset.height}px;
+  shadow-opacity: ${props => props.theme.shadows.m.shadowOpacity};
+  shadow-radius: ${props => props.theme.shadows.m.shadowRadius}px;
+  elevation: ${props => props.theme.shadows.m.elevation};
 `;
 
 export const ItemImage = styled.Image`

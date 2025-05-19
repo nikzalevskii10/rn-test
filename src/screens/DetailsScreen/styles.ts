@@ -15,7 +15,12 @@ export const ImageContainer = styled.View`
   margin-bottom: ${props => props.theme.spacing.l}px;
   border-radius: ${props => props.theme.borderRadius.l}px;
   overflow: hidden;
-  ${props => props.theme.shadows.m}
+  shadow-color: ${props => props.theme.shadows.m.shadowColor};
+  shadow-offset: ${props => props.theme.shadows.m.shadowOffset.width}px
+    ${props => props.theme.shadows.m.shadowOffset.height}px;
+  shadow-opacity: ${props => props.theme.shadows.m.shadowOpacity};
+  shadow-radius: ${props => props.theme.shadows.m.shadowRadius}px;
+  elevation: ${props => props.theme.shadows.m.elevation};
 `;
 
 export const ProductImage = styled.Image`
@@ -57,7 +62,12 @@ export const InfoContainer = styled.View`
   padding: ${props => props.theme.spacing.m}px;
   border-radius: ${props => props.theme.borderRadius.m}px;
   margin-bottom: ${props => props.theme.spacing.l}px;
-  ${props => props.theme.shadows.s}
+  shadow-color: ${props => props.theme.shadows.m.shadowColor};
+  shadow-offset: ${props => props.theme.shadows.m.shadowOffset.width}px
+    ${props => props.theme.shadows.m.shadowOffset.height}px;
+  shadow-opacity: ${props => props.theme.shadows.m.shadowOpacity};
+  shadow-radius: ${props => props.theme.shadows.m.shadowRadius}px;
+  elevation: ${props => props.theme.shadows.m.elevation};
 `;
 
 export const InfoRow = styled.View`

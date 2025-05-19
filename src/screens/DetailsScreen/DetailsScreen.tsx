@@ -30,6 +30,10 @@ export default function DetailsScreen({navigation, route}: Props) {
     return null;
   }
 
+  console.log('DetailsScreen');
+  console.log(product);
+  console.log(product.image);
+
   return (
     <Container>
       <Content>

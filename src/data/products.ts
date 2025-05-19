@@ -34,7 +34,7 @@ function generateProducts(count: number): Product[] {
       price: basePrice,
       description,
       category,
-      image: `https://picsum.photos/200/${300 + (index % 5)}`,
+      image: `https://picsum.photos/seed/${id}/200/300`,
       rating,
       stock,
       createdAt,

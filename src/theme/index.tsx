@@ -1,6 +1,5 @@
 // src/theme/index.ts
 import React from 'react';
-import {ThemeProvider as StyledThemeProvider} from 'styled-components/native';
 
 export type ThemeType = 'light' | 'dark';
 
@@ -179,8 +178,6 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({children}) => {
   );
 
   return (
-    <ThemeContext.Provider value={value}>
-      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };

@@ -1,5 +1,13 @@
 // src/theme/index.ts
 import React from 'react';
+import {
+  useState,
+  useCallback,
+  useMemo,
+  useContext,
+  createContext,
+  FC,
+} from 'react';
 
 export type ThemeType = 'light' | 'dark';
 
@@ -143,10 +151,10 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
-export const ThemeContext = React.createContext<ThemeContextType | null>(null);
+export const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export const useTheme = () => {
-  const context = React.useContext(ThemeContext);
+  const context = useContext(ThemeContext);
   if (!context) {
     throw new Error('useTheme must be used within a ThemeProvider');
   }
@@ -157,19 +165,16 @@ interface ThemeProviderProps {
   children: React.ReactNode;
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({children}) => {
-  const [isDark, setIsDark] = React.useState(false);
+export const ThemeProvider: FC<ThemeProviderProps> = ({children}) => {
+  const [isDark, setIsDark] = useState(false);
 
-  const toggleTheme = React.useCallback(() => {
+  const toggleTheme = useCallback(() => {
     setIsDark(prev => !prev);
   }, []);
 
-  const theme = React.useMemo(
-    () => (isDark ? darkTheme : lightTheme),
-    [isDark],
-  );
+  const theme = useMemo(() => (isDark ? darkTheme : lightTheme), [isDark]);
 
-  const value = React.useMemo(
+  const value = useMemo(
     () => ({
       theme,
       toggleTheme,

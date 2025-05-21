@@ -5,6 +5,20 @@ import {RootStackParamList} from '../../navigation/AppNavigator';
 import {createStyles} from './styles';
 import {lightTheme, useTheme} from '../../theme';
 
+const testNetworkRequest = async () => {
+  console.log('Test button pressed');
+  try {
+    const response = await fetch(
+      'https://jsonplaceholder.typicode.com/posts/1',
+    );
+    console.log('Making request...');
+    const data = await response.json();
+    console.log('Test response:', data);
+  } catch (error) {
+    console.error('Test error:', error);
+  }
+};
+
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export default function HomeScreen({navigation}: Props) {
@@ -25,6 +39,14 @@ export default function HomeScreen({navigation}: Props) {
           <Text style={styles.buttonText}>
             Switch to {theme === lightTheme ? 'Dark' : 'Light'} Theme
           </Text>
+        </Pressable>
+        <Pressable style={styles.button} onPress={testNetworkRequest}>
+          <Text style={styles.buttonText}>Test Network</Text>
+        </Pressable>
+        <Pressable
+          style={styles.button}
+          onPress={() => navigation.navigate('AtomicWallet')}>
+          <Text style={styles.buttonText}>Open Atomic Wallet</Text>
         </Pressable>
       </View>
     </View>

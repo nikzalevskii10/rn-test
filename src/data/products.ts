@@ -34,7 +34,7 @@ function generateProducts(count: number): Product[] {
       price: basePrice,
       description,
       category,
-      image: `https://picsum.photos/seed/${id}/200/300`,
+      image: `https://robohash.org/${id}?size=200x300`,
       rating,
       stock,
       createdAt,
@@ -43,4 +43,4 @@ function generateProducts(count: number): Product[] {
   });
 }
 
-export const products: Product[] = generateProducts(1000);
+export const products: Product[] = generateProducts(100);

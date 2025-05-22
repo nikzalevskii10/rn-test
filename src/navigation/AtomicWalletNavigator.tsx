@@ -1,11 +1,11 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {SettingsIcon} from '../ui-kit/atomic-wallet/icons/SettingsIcon';
 import {WalletScreen} from '../screens/AtomicWallet/WalletScreen/WalletScreen';
-import {HistoryScreen} from '../screens/AtomicWallet/HistoryScreen/HistoryScreen';
+import {StakingScreen} from '../screens/AtomicWallet/StakingScreen/StakingScreen';
 
-const ExchangeScreen = () => null;
 const BuyScreen = () => null;
-const StakingScreen = () => null;
+const SwapScreen = () => null;
+const MoreScreen = () => null;
 
 const TabBarIcon = ({
   focused: _focused,
@@ -41,20 +41,6 @@ export const AtomicWalletNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="History"
-        component={HistoryScreen}
-        options={{
-          tabBarIcon: TabBarIcon,
-        }}
-      />
-      <Tab.Screen
-        name="Exchange"
-        component={ExchangeScreen}
-        options={{
-          tabBarIcon: TabBarIcon,
-        }}
-      />
-      <Tab.Screen
         name="Buy"
         component={BuyScreen}
         options={{
@@ -62,8 +48,22 @@ export const AtomicWalletNavigator = () => {
         }}
       />
       <Tab.Screen
+        name="Swap"
+        component={SwapScreen}
+        options={{
+          tabBarIcon: TabBarIcon,
+        }}
+      />
+      <Tab.Screen
         name="Staking"
         component={StakingScreen}
+        options={{
+          tabBarIcon: TabBarIcon,
+        }}
+      />
+      <Tab.Screen
+        name="More"
+        component={MoreScreen}
         options={{
           tabBarIcon: TabBarIcon,
         }}
